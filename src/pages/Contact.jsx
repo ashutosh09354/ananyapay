@@ -1,0 +1,13 @@
+import {useState} from 'react';import Seo from '../components/ui/Seo.jsx';import {PageHeader} from '../components/ui/Section.jsx';import Icon from '../components/ui/Icon.jsx';import {CallButton} from '../components/ui/Button.jsx';import {business,services,enquiry,telLink} from '../config/business.js';
+const f='mt-1 w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-800';
+export default function Contact(){const [d,setD]=useState({name:'',service:services[0].title,note:''});const set=k=>e=>setD({...d,[k]:e.target.value});
+const go=e=>{e.preventDefault();const t=`Hello Ananya Enterprise, my name is ${d.name||'(not given)'}. I would like to enquire about ${d.service}.${d.note?` ${d.note}`:''}`;window.open(enquiry(t),'_blank','noopener');};
+return(<><Seo title="Contact Us" description="Call or WhatsApp Ananya Enterprise during working hours."/><PageHeader title="Contact us" intro="We reply during working hours." crumbs={[['Contact']]}/>
+<section className="py-14 md:py-20"><div className="mx-auto max-w-3xl px-4 sm:px-6"><div className="space-y-6">
+<ul className="space-y-4">{[['phone','Phone',<a className="text-brand-red hover:underline" href={telLink}>{business.phoneDisplay}</a>],['clock','Hours',business.hours]].map(([i,t,v])=><li key={t} className="flex gap-3"><Icon n={i} className="mt-0.5 shrink-0 text-brand-red"/><div><p className="font-semibold text-brand-purple">{t}</p><p className="text-slate-600">{v}</p></div></li>)}</ul>
+<div className="flex flex-wrap gap-3"><CallButton/></div>
+<form onSubmit={go} className="rounded-xl border border-slate-200 bg-brand-mist p-6"><h2 className="font-bold text-brand-purple">Send an enquiry on WhatsApp</h2><p className="mt-1 text-sm text-slate-500">This opens WhatsApp with your message. Nothing is stored on this site.</p>
+<label className="mt-4 block text-sm font-medium text-brand-purple">Your name<input className={f} value={d.name} onChange={set('name')} autoComplete="name"/></label>
+<label className="mt-3 block text-sm font-medium text-brand-purple">Service<select className={f} value={d.service} onChange={set('service')}>{services.map(s=><option key={s.slug}>{s.title}</option>)}</select></label>
+<label className="mt-3 block text-sm font-medium text-brand-purple">Message (optional)<textarea className={f} rows="3" value={d.note} onChange={set('note')}/></label>
+<p className="mt-3 text-xs text-slate-500">Do not enter OTPs, PINs, CVVs, card numbers or passwords.</p><button className="mt-4 inline-flex min-h-[44px] items-center gap-2 rounded-lg bg-brand-red px-5 font-semibold text-white hover:bg-red-700"><Icon n="wa" size={18}/>Continue on WhatsApp</button></form></div></div></section></>)}

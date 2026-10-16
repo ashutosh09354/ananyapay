@@ -1,0 +1,2 @@
+import Seo from '../components/ui/Seo.jsx';import {Button} from '../components/ui/Button.jsx';
+export default function NotFound(){return(<section className="py-24 text-center"><Seo title="Page not found"/><h1 className="text-3xl font-bold text-brand-purple">Page not found</h1><p className="mt-2 text-slate-600">The page you are looking for does not exist.</p><Button to="/" className="mt-6">Back to home</Button></section>)}

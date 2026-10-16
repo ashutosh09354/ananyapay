@@ -1,0 +1,4 @@
+import Seo from '../components/ui/Seo.jsx';import {PageHeader,Section} from '../components/ui/Section.jsx';import ServiceCard from '../components/ServiceCard.jsx';import HowItWorks from '../components/home/HowItWorks.jsx';import CtaBand from '../components/home/CtaBand.jsx';import {services} from '../config/business.js';
+export default function Services(){return(<><Seo title="Services" description="Card payment assistance, credit card bill payment support, bank transfer support and credit card guidance."/>
+<PageHeader title="Our services" intro="Choose a service to learn more or start a WhatsApp enquiry." crumbs={[['Services']]}/>
+<Section className="bg-white"><div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{services.map(s=><ServiceCard key={s.slug} s={s}/>)}</div></Section><HowItWorks className="bg-brand-mist"/><CtaBand/></>)}

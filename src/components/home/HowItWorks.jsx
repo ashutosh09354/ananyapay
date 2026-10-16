@@ -1,0 +1,3 @@
+import {Section} from '../ui/Section.jsx';import {steps} from '../../config/business.js';
+export default function HowItWorks({className='bg-white'}){return(<Section eyebrow="Simple process" title="How it works" intro="Four straightforward steps from first message to completed payment." className={className}><ol className="grid gap-6 md:grid-cols-4">
+{steps.map(([t,d],i)=><li key={t} className="rounded-xl border border-slate-200 bg-white p-6"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-purple text-sm font-bold text-white">{i+1}</span><h3 className="mt-4 font-bold text-brand-purple">{t}</h3><p className="mt-1 text-sm text-slate-600">{d}</p></li>)}</ol></Section>)}

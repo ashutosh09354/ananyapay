@@ -1,0 +1,3 @@
+import Icon from '../ui/Icon.jsx';import {business} from '../../config/business.js';
+export default function TrustStrip(){const i=[['clock','Working hours',business.hours],['lock','Your security','No OTP, PIN or CVV requests, ever'],['check','Upfront charges','Explained before you proceed']];
+return(<section className="border-b border-slate-200 bg-brand-mist"><div className="mx-auto grid max-w-7xl gap-5 px-4 py-6 sm:grid-cols-2 sm:px-6 lg:grid-cols-3 lg:px-8">{i.map(([n,t,d])=><div key={t} className="flex items-start gap-3"><Icon n={n} className="mt-0.5 shrink-0 text-brand-red"/><div><p className="text-sm font-semibold text-brand-purple">{t}</p><p className="text-sm text-slate-600">{d}</p></div></div>)}</div></section>)}

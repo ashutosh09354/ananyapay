@@ -1,0 +1,2 @@
+import {CallButton,WhatsAppButton} from '../ui/Button.jsx';
+export default function MobileBar(){return(<div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 gap-2 border-t border-slate-200 bg-white p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] lg:hidden"><CallButton variant="purple" className="w-full">Call now</CallButton><WhatsAppButton className="w-full">WhatsApp</WhatsAppButton></div>)}

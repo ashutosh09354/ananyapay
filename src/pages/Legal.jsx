@@ -1,0 +1,3 @@
+import Seo from '../components/ui/Seo.jsx';import {PageHeader} from '../components/ui/Section.jsx';import {legal} from '../config/legal.js';
+export default function Legal({kind}){const p=legal[kind];return(<><Seo title={p.title} description={`${p.title} for Ananya Enterprise.`}/><PageHeader title={p.title} intro={`Last updated: ${p.updated}`} crumbs={[[p.title]]}/>
+<section className="py-14"><div className="mx-auto max-w-3xl space-y-8 px-4 sm:px-6">{p.sections.map(([h,t])=><div key={h}><h2 className="text-lg font-bold text-brand-purple">{h}</h2><p className="mt-2 text-slate-600">{t}</p></div>)}</div></section></>)}

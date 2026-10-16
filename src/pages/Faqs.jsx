@@ -1,0 +1,3 @@
+import Seo from '../components/ui/Seo.jsx';import {PageHeader} from '../components/ui/Section.jsx';import FaqAccordion from '../components/FaqAccordion.jsx';import CtaBand from '../components/home/CtaBand.jsx';import {faqs} from '../config/business.js';
+export default function Faqs(){return(<><Seo title="FAQs" description="Answers on services, charges, payment process, eligibility and support at Ananya Enterprise."/><PageHeader title="Frequently asked questions" intro="Can't find your answer? Message or call us." crumbs={[['FAQs']]}/>
+<section className="py-14 md:py-20"><div className="mx-auto max-w-3xl px-4 sm:px-6"><FaqAccordion items={faqs}/></div></section><CtaBand/></>)}
