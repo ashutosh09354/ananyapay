@@ -3,7 +3,7 @@ const f='mt-1 w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-8
 export default function Contact(){const [d,setD]=useState({name:'',service:services[0].title,note:''});const set=k=>e=>setD({...d,[k]:e.target.value});
 const go=e=>{e.preventDefault();const t=`Hello Ananya Enterprise, my name is ${d.name||'(not given)'}. I would like to enquire about ${d.service}.${d.note?` ${d.note}`:''}`;window.open(enquiry(t),'_blank','noopener');};
 return(<><Seo title="Contact Us" description="Call or WhatsApp Ananya Enterprise during working hours."/><PageHeader title="Contact us" intro="We reply during working hours." crumbs={[['Contact']]}/>
-<section className="py-14 md:py-20"><div className="mx-auto max-w-3xl px-4 sm:px-6"><div className="space-y-6">
+<section className="py-10 md:py-14"><div className="mx-auto max-w-3xl px-4 sm:px-6"><div className="space-y-5">
 <ul className="space-y-4">{[['phone','Phone',<a className="text-brand-red hover:underline" href={telLink}>{business.phoneDisplay}</a>],['clock','Hours',business.hours]].map(([i,t,v])=><li key={t} className="flex gap-3"><Icon n={i} className="mt-0.5 shrink-0 text-brand-red"/><div><p className="font-semibold text-brand-purple">{t}</p><p className="text-slate-600">{v}</p></div></li>)}</ul>
 <div className="flex flex-wrap gap-3"><CallButton/></div>
 <form onSubmit={go} className="rounded-xl border border-slate-200 bg-brand-mist p-6"><h2 className="font-bold text-brand-purple">Send an enquiry on WhatsApp</h2><p className="mt-1 text-sm text-slate-500">This opens WhatsApp with your message. Nothing is stored on this site.</p>

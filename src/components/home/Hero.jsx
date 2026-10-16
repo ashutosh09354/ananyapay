@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';import Icon from '../ui/Icon.jsx';import {WhatsAppButton,CallButton} from '../ui/Button.jsx';import {services,enquiry} from '../../config/business.js';
-export default function Hero(){return(<section className="bg-brand-deep text-white"><div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-5 lg:px-8">
+export default function Hero(){return(<section className="bg-brand-deep text-white"><div className="mx-auto grid max-w-7xl gap-7 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-5 lg:px-8">
 <div className="lg:col-span-3">
 <h1 className="text-4xl font-extrabold leading-tight md:text-5xl">Your Card. Your Payment. <span className="text-brand-gold">Made Easy.</span></h1>
-<p className="mt-5 max-w-xl text-lg text-purple-100">Local help with card payments, credit card bills, bank transfers and credit card guidance, with charges explained before you proceed.</p>
-<div className="mt-8 flex flex-wrap gap-3"><WhatsAppButton msg="Hello Ananya Enterprise, I would like to know more about your services.">Chat on WhatsApp</WhatsAppButton><CallButton variant="light">Call now</CallButton></div>
-<p className="mt-6 flex items-center gap-2 text-sm text-purple-200"><Icon n="shield" size={18} className="text-brand-gold"/>We never ask for your OTP, PIN, CVV or passwords.</p></div>
-<div className="rounded-2xl bg-white p-6 text-slate-700 shadow-xl lg:col-span-2"><h2 className="text-lg font-bold text-brand-purple">What do you need help with?</h2><p className="mt-1 text-sm text-slate-500">Choose a service to start a WhatsApp chat.</p>
+<p className="mt-4 max-w-xl text-lg text-purple-100">Local help with card payments, credit card bills, bank transfers and credit card guidance, with charges explained before you proceed.</p>
+<div className="mt-6 flex flex-wrap gap-3"><WhatsAppButton msg="Hello Ananya Enterprise, I would like to know more about your services.">Chat on WhatsApp</WhatsAppButton><CallButton variant="light">Call now</CallButton></div>
+<p className="mt-5 flex items-center gap-2 text-sm text-purple-200"><Icon n="shield" size={18} className="text-brand-gold"/>We never ask for your OTP, PIN, CVV or passwords.</p></div>
+<div className="rounded-2xl bg-white p-5 text-slate-700 shadow-xl lg:col-span-2"><h2 className="text-lg font-bold text-brand-purple">What do you need help with?</h2><p className="mt-1 text-sm text-slate-500">Choose a service to start a WhatsApp chat.</p>
 <ul className="mt-4 space-y-2">{services.map(s=><li key={s.slug}><a href={enquiry(s.msg)} target="_blank" rel="noopener noreferrer" className="flex min-h-[48px] items-center gap-3 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-brand-purple transition hover:border-brand-red hover:bg-brand-mist"><Icon n={s.icon} size={20}/><span className="flex-1">{s.title}</span><Icon n="arrow" size={16} className="text-brand-red"/></a></li>)}</ul>
 <Link to="/services" className="mt-4 inline-block text-sm font-semibold text-brand-red hover:underline">View all services</Link></div></div></section>)}
